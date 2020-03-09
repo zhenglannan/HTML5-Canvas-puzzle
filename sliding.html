@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery.easyaudioeffects.1.0.0.min.js"> </script>
+  <script src="lib/easeljs-0.7.1.min.js"></script>
+  <script src="lib/tweenjs-0.5.1.min.js"></script>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/mystyle.css">
+
+  <title>拼图游戏</title>
+</head>
+
+<body onload="init()">
+  <audio src="audios/Luv Letter.mp3" loop id="bg"></audio>
+  <audio src="audios/successorfail.mp3" id="tishi"></audio>
+
+  <main>
+    <!-- 整个游戏界面800*600 -->
+    <div class="game clearfix">
+      <!-- 顶部链接 -->
+      <div class="top">
+        <a class="backbtn right"></a>
+        <a class="music right"></a>
+      </div>
+      <!-- 拼图canvas -->
+      <div class="playPart left">
+        <canvas id="puzzle" width="480px" height="480px"></canvas>
+      </div>
+      <!-- 右边操作栏 -->
+      <div class="aside right">
+        <button type="button" class="restart">重新开始</button>
+        <button type="button" class="next" onclick="next()">下一关</button>
+        <!-- 暂停、开始 -->
+        <button class="pausebtn">暂停</button>
+        <button class="startbtn">开始</button>
+        <div class="picture"></div>
+        <!-- 时间 -->
+        <div class="timer">
+          <!-- 时间条 -->
+          <span class="progress"></span>
+        </div>
+        <!-- 分数 -->
+        <div class="score">
+          <label>得分：</label><span id="score">0</span>
+        </div>
+      </div>
+    </div>
+    <!-- 游戏开始界面 -->
+    <div class="start">
+      <div class="title">
+        <img src="images/title.png" width="600px">
+      </div>
+      <a class="playbtn">
+        <img src="images/playbt.png" alt="">
+      </a>
+    </div>
+    <!-- 加载进度条 -->
+    <canvas id="myca" width="800" height="600" style="background-color: #374252;">
+    </canvas>
+    <!-- 过关界面的下一关 -->
+    <div id="next">
+      <button onclick="next()"></button>
+    </div>
+    <!-- 失败提示 -->
+    <div class="fail">
+      <button class="restart">重玩本关</button>
+      <button class="backbtn">退出</button>
+    </div>
+  </main>
+</body>
+<script src="js/sliding.js"></script>
+<script src="js/proload.js"></script>
+
+</html>

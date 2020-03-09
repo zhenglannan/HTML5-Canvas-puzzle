@@ -1,0 +1,297 @@
+html {
+    background-color: black;
+}
+
+#myca {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* animation-name: preload;
+    animation-duration: 3s;
+    animation-delay: 1s; 
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1; */
+}
+
+/* .whole{
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: black 1px solid;
+} */
+.game {
+    /* border: 1px solid black; */
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: url(../images/bg.png) no-repeat center/100%;
+    /* display: inline-block; */
+}
+
+.game .top .backbtn,
+.music {
+    width: 49px;
+    height: 49px;
+}
+
+.game .top .backbtn {
+    margin-right: 10px;
+    background: url(../images/back_btn.png) no-repeat center/100%;
+}
+
+.game .top .music {
+    margin-right: 10px;
+    background: url(../images/music_on.png) no-repeat center/100%;
+}
+
+/* css优先级必须一样，这两个类才能切换成功 */
+.game .top .music2 {
+    background: url(../images/music_off.png) no-repeat center/100%;
+}
+
+.game .playPart {
+    width: 490px;
+    height: 490px;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    padding: 50px;
+    
+    /* text-align: center; */
+}
+.game .playPart canvas{
+    border-radius: 18px;
+}
+
+.aside {
+    width: 300px;
+    /* height: 400px; */
+}
+
+.aside button {
+    font-size: 21px;
+    color: #373B44;
+    margin: 0 auto;
+    margin-bottom: 9px;
+    width: 179px;
+    height: 50px;
+    cursor: pointer;
+    display: block;
+    border-radius: 6px;
+    background: linear-gradient(to right, #43C6AC, #F8FFAE);
+    transition: background .5s;
+}
+
+.aside button:hover {
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
+}
+
+.aside .picture {
+    border: 1px solid chartreuse;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background: url("../images/defa.jpg") no-repeat center/100%;
+    box-sizing: border-box;
+}
+
+.start {
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    background: url("../images/cover.png") no-repeat center/100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* -webkit-animation-iteration-count: 1;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-timing-function: ease-in-out; */
+    overflow: hidden;
+}
+
+/* @-webkit-keyframes disappear {
+    0% {
+        transform: translateX(-100px) translateY(0);
+    }
+
+    25% {
+        transform: translateX(-700px) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-500px) translateY(0);
+    }
+
+    100% {
+        transform: translateX(-800px) translateY(0);
+    }
+} */
+.start .title {
+    width: 600px;
+    height: 213px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.start .playbtn img {
+    position: absolute;
+    /* top: 363px;
+    left: 279px; */
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    animation-name: play;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    /* animation: play 2 ease-in-out  infinite; */
+}
+
+@keyframes play {
+    from {
+        transform: scale(1, 1);
+    }
+
+    to {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+.aside .timer {
+    width: 200px;
+    height: 19px;
+    margin: 0 auto;
+    margin-top: 24px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px 0px #ddd inset;
+
+
+}
+
+.aside .progress {
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+    display: inline-block;
+    /* text-align: center; */
+    background: linear-gradient(to right, #004FF9, #FFF94C);
+    animation-duration: 10s;
+    animation-timing-function: linear;
+}
+
+/* （定义一样的动画，不一样的名字） */
+@-webkit-keyframes progress {
+    /* 0% {
+        width: 200px;
+    } */
+
+    100% {
+        width: 0%;
+    }
+}
+
+@-webkit-keyframes progress2 {
+    /* 0% {
+            width: 200px;
+        } */
+
+    100% {
+        width: 0%;
+    }
+}
+
+.aside .score {
+    width: 154px;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 21px;
+    color: #373B44;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 10px;
+    background: linear-gradient(to right, #f79d00, #64f38c);
+    border-radius: 15px;
+}
+
+/* .play {
+    animation: progress 5s 1 ease;
+}
+
+.res {
+    animation: progress2 5s 1 ease;
+}
+
+.pause {
+    animation-play-state: paused;
+} */
+#next {
+    width: 800px;
+    height: 600px;
+    background: url("../images/success.png") no-repeat center/50% rgba(0, 0, 0, 0.3);
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+#next button {
+    position: absolute;
+    width: 106px;
+    height: 113px;
+    /* border: 2px solid darkcyan; */
+    cursor: pointer;
+    /* display: block; */
+    margin: auto;
+    top: 30%;
+    left: 0;
+    right: 0;
+    /* bottom: 31px; */
+    background: url(../images/next.png) no-repeat center/100%;
+
+}
+
+.fail {
+    width: 800px;
+    height: 600px;
+    background: url("../images/fail.png") no-repeat 50% 27%/42% rgba(0, 0, 0, 0.6);
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.fail button{
+    font-size: 24px;
+    font-weight: bold;
+    color: #8aafcc;
+    width: 179px;
+    height: 50px;
+    cursor: pointer;
+    display: block;
+    border-radius: 10px;
+    background: #583134;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 58%;
+   
+}
+.fail .backbtn{
+margin-top: 65px    ;
+}
